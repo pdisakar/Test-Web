@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic';
 import PageBanner from '@/components/Banners/PageBanner';
 import BreadCrumbPackage from '@/components/BreadCrumb/BreadCrumbPackage';
 import TestimonialsCard from '@/components/Cards/TestimonialsCard/TestimonialsCard';
-import PrintController from '@/components/PrintPDF/PrintController';
+import PrintPDF from '@/components/PrintPDF/PrintPDF';
 
 const Accordion = dynamic(() => import('@/components/Accordion/Accordion'));
 const FixedDeparture = dynamic(
@@ -639,7 +639,7 @@ const Package: React.FC<PackageProps> = ({ packageData, breadcrumb }) => {
                 </Link>
               </div>
               <div className="page-action">
-                <PrintController
+                <PrintPDF
                   title={packageData.package_title}
                   itinerary={packageData.itinerary?.details || []}
                   const_include={packageData.package_cost_includes || ''}

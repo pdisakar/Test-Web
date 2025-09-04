@@ -12,10 +12,9 @@
     "@fancyapps/ui": "^6.0.25",
     "axios": "^1.11.0",
     "date-fns": "^4.1.0",
-    "html2canvas": "^1.4.1",
-    "jspdf": "^3.0.2",
     "next": "15.1.7",
     "nextjs-toploader": "^3.8.16",
+    "pdf-lib": "^1.17.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "sass": "^1.91.0"
