@@ -1,0 +1,214 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* for text select */
+@layer utilities {
+  ::selection {
+    @apply bg-primary text-white;
+  }
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply bg-page-bg min-w-[320px] text-text-color font-primary;
+  }
+  .common-box {
+    @apply relative pt-[3rem]  pb-[3rem] md:pt-[4rem]  md:pb-[4rem] lg:pt-[6rem] lg:pb-[6rem];
+  }
+  .common-module {
+    @apply mb-8;
+  }
+}
+
+// applyed for all article tags
+article {
+  h2 {
+    @apply text-headings font-black text-3xl mb-2;
+  }
+
+  h2 {
+    @apply text-headings  font-black text-2xl mb-2;
+  }
+  h3 {
+    @apply text-headings  font-black text-[22px] mb-2;
+  }
+  h4 {
+    @apply text-headings  font-black text-[20px] mb-2;
+  }
+
+  p {
+    @apply mb-[1rem] leading-[190%];
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  img {
+    @apply py-3;
+  }
+
+  a {
+    @apply underline decoration-primary text-primary decoration-1 underline-offset-1 cursor-pointer font-medium;
+  }
+
+   .responsive-table {
+    @apply w-full overflow-x-auto mb-5 ;
+
+    table {
+      @apply w-full border border-primary/20 border-collapse min-w-[450px] mb-4 mt-2;
+
+      tr:nth-child(odd) {
+        @apply bg-primary/5;
+      }
+
+      th,
+      td {
+        @apply border border-primary/20 p-[10px];
+      }
+
+      th {
+        @apply font-semibold text-left text-headings bg-primary/15;
+      }
+    }
+  }
+
+  @apply [&_ul]:mb-3 [&_ul>li]:mt-1.5 [&_ul>li]:leading-[170%] [&_ul>li]:relative [&_ul>li]:pl-5 [&_ul>li]:before:h-2 [&_ul>li]:before:w-2 [&_ul>li]:before:absolute [&_ul>li]:before:left-0 [&_ul>li]:before:top-2 [&_ul>li]:before:content-[''] [&_ul>li]:before:bg-list [&_ul>li]:before:bg-no-repeat [&_ul>li]:before:bg-cover;
+}
+
+/* custom scrollbar */
+.custom-scrollbar {
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 7px;
+    background-color: rgba(112, 144, 81, 0.05);
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: rgba(112, 144, 81, 0.05);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(112, 144, 81, 0.3);
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(112, 144, 81, 0.7);
+  }
+
+  /* This is correct for hiding buttons in the general custom-scrollbar */
+  &::-webkit-scrollbar-button {
+    display: none;
+    height: 0;
+    width: 0;
+  }
+}
+
+article.custom-scrollbar {
+  max-height: 8rem;
+  line-height: 190%;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  transition: scrollbar-color 0.3s ease;
+
+  &::-webkit-scrollbar {
+    width: 7px;
+    background: transparent;
+    transition: background-color 0.3s ease;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(112, 144, 81, 0.3);
+    border-radius: 4px;
+    opacity: 0;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+  }
+
+  &::-webkit-scrollbar-button,
+  &::-webkit-scrollbar-button:start:decrement,
+  &::-webkit-scrollbar-button:end:increment {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    background: transparent !important;
+  }
+
+  &:hover {
+    scrollbar-color: rgba(112, 144, 81, 0.3) rgba(112, 144, 81, 0.05);
+
+    &::-webkit-scrollbar {
+      background-color: rgba(112, 144, 81, 0.05);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      opacity: 1;
+    }
+  }
+}
+
+/* image slot style */
+.image-slot {
+  @apply relative z-10 overflow-hidden before:-z-10 block after:-z-10 before:block;
+
+  background: linear-gradient(
+    100deg,
+    rgba(112, 144, 81, 0.1) 1%,
+    rgba(112, 144, 81, 0.2) 50%,
+    rgba(112, 144, 81, 0.1) 70%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+
+  > img {
+    @apply absolute w-full h-full bottom-0 object-cover;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: 200% 0; 
+    }
+    100% {
+      background-position: -200% 0; 
+    }
+  }
+}
+
+//title h2 and span style
+.title {
+  @apply mb-4;
+  h1 {
+    @apply text-headings font-black;
+    font-size: clamp(1.75rem, 5vw, 2.125rem);
+  }
+  h2 {
+    @apply text-headings font-black;
+    font-size: clamp(1.75rem, 5vw, 2.125rem);
+  }
+  h3 {
+    @apply text-headings font-black;
+    font-size: clamp(1.5rem, 4vw, 1.75rem);
+  }
+  h4 {
+    @apply text-headings font-black;
+    font-size: clamp(1.5rem, 3.5vw, 1.5rem);
+  }
+
+  p {
+    @apply text-sm leading-[160%] font-medium max-w-[664px] text-text-color/80 block mt-[10px];
+  }
+  span {
+    @apply text-[15px] font-semibold text-primary flex items-center justify-center mb-1 gap-2;
+  }
+}
