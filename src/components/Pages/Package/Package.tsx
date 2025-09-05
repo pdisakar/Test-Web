@@ -189,7 +189,7 @@ const Package: React.FC<PackageProps> = ({ packageData, breadcrumb }) => {
               <div className="abstract">
                 <div className="common-module">
                   <article
-                    className=" px-6 py-4 bg-primary/15 leading-[180%] font-medium text-sm rounded-md"
+                    className=" px-6 py-4 bg-primary/5 border border-primary/25 border-l-primary border-l-2 leading-[180%] font-medium text-sm rounded-md"
                     dangerouslySetInnerHTML={{
                       __html: packageData.package_abstract,
                     }}
