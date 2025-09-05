@@ -646,6 +646,20 @@ const Package: React.FC<PackageProps> = ({ packageData, breadcrumb }) => {
                   cost_exclude={packageData.package_cost_excludes || ''}
                   price={packageData.group_default_price || 0}
                   duration_type={packageData.package_duration_type || 'days'}
+                  package_abstract={packageData.package_abstract}
+                  destination={packageData.destination}
+                  package_duration={packageData.package_duration}
+                  grade={packageData.grade}
+                  style={packageData.style}
+                  accommodation={packageData.accommodation}
+                  package_max_altitude={packageData.package_max_altitude}
+                  transportation={packageData.transportation}
+                  package_group_size={packageData.package_group_size}
+                  package_highlights={packageData.package_highlights}
+                  package_details={packageData.package_details}
+                  package_trip_info={packageData.package_trip_info}
+                  pricegroup={packageData.pricegroup}
+                  bestseason={packageData.bestseason}
                 />
               </div>
             </div>
