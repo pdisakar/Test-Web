@@ -638,7 +638,7 @@ const Package: React.FC<PackageProps> = ({ packageData, breadcrumb }) => {
                   Check Availability
                 </Link>
               </div>
-              <div className="page-action">
+              <div className="page-action mt-4">
                 <PrintPDF
                   title={packageData.package_title}
                   itinerary={packageData.itinerary?.details || []}
@@ -658,7 +658,10 @@ const Package: React.FC<PackageProps> = ({ packageData, breadcrumb }) => {
                   package_highlights={packageData.package_highlights}
                   package_details={packageData.package_details}
                   package_trip_info={packageData.package_trip_info}
-                  pricegroup={packageData.pricegroup}
+                  pricegroup={packageData.pricegroup.map(pg => ({
+                    ...pg,
+                    offer_label: pg.offer_label ?? undefined,
+                  }))}
                   bestseason={packageData.bestseason}
                 />
               </div>

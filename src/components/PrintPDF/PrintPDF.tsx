@@ -290,9 +290,18 @@ const PrintPDF: React.FC<PrintPDFProps> = props => {
 
   return (
     <button
-      className="btn btn-secondary w-full"
+      className="btn btn-secondary w-full flex items-center justify-center gap-1 text-sm font-semibold text-primary" 
       onClick={handleGeneratePDF}>
-      Generate PDF
+      <svg
+        className="icon text-primary"
+        width="24"
+        height="24">
+        <use
+          xlinkHref={`/icons.svg#print-pdf`}
+          fill="currentColor"
+        />
+      </svg>
+      Get Broucher
     </button>
   );
 };
